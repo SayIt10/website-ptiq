@@ -1,0 +1,128 @@
+/* Navbar CSS */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: #173B45;
+    height: 70px;
+  }
+  .navbar-left .logo {
+    width: 250px;
+    align-items: center; /* Sesuaikan ukuran logo */
+  }
+  
+  .navbar-right ul {
+    align-items: center;
+    display: flex;
+    list-style: none;
+    display: flex;
+    gap: 60px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-right: 50px;
+  }
+  .navbar-right ul li a {
+    color: #F8EDED;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  
+  /* Slider CSS */
+  .slider {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+  }
+  
+  .slide {
+    min-width: 100%;
+    transition: 0.5s;
+  }
+  
+  .slide-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  
+  /* About Section */
+  #about {
+    padding: 2rem;
+    text-align: center;
+    background-color: #F8EDED;
+  }
+  
+  /* Learning Materials CSS */
+  #materials{
+    text-align: center;
+  }
+  .card-container {
+    display: flex;
+    gap: 20px;
+    padding: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card {
+    border-radius: 10px;
+    border: none;
+    padding: 1rem;
+    width: 200px;
+    text-align: center;
+    background-color: white;
+  }
+  
+/* Team CSS - Card View */
+  #team h2{
+    text-align: center;
+  }
+
+  .team-container {
+    display: grid;
+    grid-template-columns: repeat(4 , minmax(200px, 1fr));
+    gap: 40px;
+    padding: 2rem;
+    justify-items: center;
+  }
+
+  .team-card {
+    border-radius: 10px;
+    background-color: white;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensure cards take full available width within their grid column */
+    max-width: 200px;
+    height: 300px;
+  }
+  
+  .team-photo {
+    width: 100%;
+    height: 210px;
+    background-color: gray;
+    margin-bottom: 10px;
+  }
+  
+  /* Special styling for PM (Ketua) */
+  .team-name {
+    font-weight: bold;
+  }
+  
+  .team-role {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  /* Footer CSS */
+  footer {
+    padding: 1rem;
+    background-color: #FF8225;
+    color: white;
+    text-align: center;
+  }
+  
+  /* Body background */
+  body {
+    background-color: #F8EDED;
+  }
+  
