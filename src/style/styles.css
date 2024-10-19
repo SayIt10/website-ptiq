@@ -1,128 +1,242 @@
 /* Navbar CSS */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 2rem;
-    background-color: #173B45;
-    height: 70px;
-  }
-  .navbar-left .logo {
-    width: 250px;
-    align-items: center; /* Sesuaikan ukuran logo */
-  }
-  
-  .navbar-right ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #173B45;
+  height: 70px;
+}
+
+.navbar-left .logo {
+  width: 250px;
+  align-items: center; /* Sesuaikan ukuran logo */
+}
+
+.navbar-right ul {
+  align-items: center;
+  display: flex;
+  list-style: none;
+  gap: 60px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-right: 50px;
+}
+
+.navbar-right ul li a {
+  color: #F8EDED;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
     align-items: center;
-    display: flex;
-    list-style: none;
-    display: flex;
-    gap: 60px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-right: 50px;
-  }
-  .navbar-right ul li a {
-    color: #F8EDED;
-    text-decoration: none;
-    font-size: 1.2rem;
-  }
-  
-  /* Slider CSS */
-  .slider {
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-  }
-  
-  .slide {
-    min-width: 100%;
-    transition: 0.5s;
-  }
-  
-  .slide-image {
-    width: 100%;
     height: auto;
   }
   
-  
-  /* About Section */
-  #about {
-    padding: 2rem;
-    text-align: center;
-    background-color: #F8EDED;
+  .navbar-left .logo {
+    width: 180px;
   }
-  
-  /* Learning Materials CSS */
-  #materials{
-    text-align: center;
-  }
-  .card-container {
-    display: flex;
+
+  .navbar-right ul {
+    flex-direction: column;
     gap: 20px;
-    padding: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
+    margin-right: 0;
   }
-  .card {
-    border-radius: 10px;
-    border: none;
-    padding: 1rem;
-    width: 200px;
-    text-align: center;
-    background-color: white;
+
+  .navbar-right ul li a {
+    font-size: 1rem;
   }
-  
+}
+
+/* Slider Section */
+#slider {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 65vh;
+  background-image: url('/public/img/background_slider.gif'); /* Ganti dengan gambar slider yang kamu punya */
+  background-size: contain;
+  background-position: center;
+  color: #F8EDED;
+  padding: 0 20px;
+}
+
+#slider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Layer hitam semi-transparan */
+  z-index: 1;
+}
+
+#slider .content {
+  position: relative;
+  z-index: 2; /* Supaya konten di atas layer hitam */
+  text-align: left; /* Rata kiri */
+  max-width: 800px;
+  margin-left: 100px;
+}
+
+#slider h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#slider p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  width: 650px;
+}
+
+#slider .get-started-btn {
+  background-color: #ce681af7;
+  color: white;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#slider .get-started-btn:hover {
+  background-color: #e6761f; /* Warna tombol saat hover */
+}
+
+/* Responsive Slider */
+@media (max-width: 768px) {
+  #slider h1 {
+    font-size: 1.8rem;
+  }
+
+  #slider p {
+    font-size: 1rem;
+  }
+
+  #slider .get-started-btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* About Section */
+#about {
+  padding: 2rem;
+  text-align: center;
+  background-color: #F8EDED;
+}
+
+/* Learning Materials CSS */
+#materials {
+  text-align: center;
+}
+
+.card-container {
+  display: flex;
+  gap: 10px; /* Ubah menjadi lebih kecil jika diperlukan */
+  padding: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  border-radius: 10px;
+  border: none;
+  padding: 1rem;
+  width: 200px;
+  text-align: center;
+  background-color: white;
+}
+
 /* Team CSS - Card View */
-  #team h2{
-    text-align: center;
-  }
+#team h2 {
+  text-align: center;
+}
 
-  .team-container {
-    display: grid;
-    grid-template-columns: repeat(4 , minmax(200px, 1fr));
-    gap: 40px;
-    padding: 2rem;
-    justify-items: center;
-  }
+.team-card {
+  border-radius: 10px;
+  background-color: white;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 200px;
+  margin: 0; /* Pastikan tidak ada margin untuk kartu */
+  display: inline-block; /* Pastikan kartu diperlakukan sebagai elemen block */
+}
 
+/* Mengatur jarak antara kartu */
+.slick-slide {
+  margin: 0; /* Menghilangkan jarak horizontal */
+}
+
+/* Jika ingin menambahkan jarak vertikal */
+.team-card {
+  margin-bottom: 0; /* Menghilangkan jarak bawah kartu */
+}
+
+.team-photo {
+  width: 100%;
+  height: 210px;
+  background-color: lightgray;
+  margin-bottom: 10px;
+  background-size: cover; /* Agar foto terpotong sesuai ukuran */
+  background-position: center; /* Menjaga fokus foto di tengah */
+}
+
+/* Responsive Team Section */
+@media (max-width: 768px) {
   .team-card {
-    border-radius: 10px;
-    background-color: white;
-    padding: 1rem;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Ensure cards take full available width within their grid column */
-    max-width: 200px;
-    height: 300px;
+    max-width: 150px;
   }
-  
+
   .team-photo {
-    width: 100%;
-    height: 210px;
-    background-color: gray;
-    margin-bottom: 10px;
+    height: 160px;
   }
-  
-  /* Special styling for PM (Ketua) */
-  .team-name {
-    font-weight: bold;
-  }
-  
-  .team-role {
-    font-size: 0.9rem;
-    color: #666;
-  }
-  
-  /* Footer CSS */
-  footer {
-    padding: 1rem;
-    background-color: #FF8225;
-    color: white;
-    text-align: center;
-  }
-  
-  /* Body background */
-  body {
-    background-color: #F8EDED;
-  }
-  
+}
+
+/* Footer CSS */
+footer {
+  padding: 1rem;
+  background-color: #FF8225;
+  color: white;
+  text-align: center;
+}
+
+/* Body background */
+body {
+  background-color: #F8EDED;
+}
+
+/* styles.css */
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #173B45;
+  opacity: 70%;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: display 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Pastikan tombol di atas konten lain */
+}
+
+.floating-button:hover {
+  background-color: #173B45; /* Warna saat hover */
+}
+

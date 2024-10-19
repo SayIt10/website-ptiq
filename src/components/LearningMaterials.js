@@ -3,11 +3,11 @@ import React from 'react';
 
 const LearningMaterials = () => {
   const materials = [
-    { title: 'React Basics', description: 'Learn the basics of React.js' },
-    { title: 'Advanced React', description: 'Dive deeper into React.js concepts' },
-    { title: 'State Management', description: 'Understanding Redux and Context API' },
-    { title: 'React Hooks', description: 'Master hooks like useState and useEffect' },
-    { title: 'React Routing', description: 'Implementing navigation using React Router' }
+    { title: 'Trivia Q.S AT-TIN', description: 'Learn the basics of React.js' },
+    { title: 'Trivia Q.S AL-QURAISY', description: 'Dive deeper into React.js concepts' },
+    { title: 'Trivia Q.S AL-FIL', description: 'Understanding Redux and Context API' },
+    { title: 'Trivia Q.S AL-ZALZALAH', description: 'Master hooks like useState and useEffect' },
+    { title: 'Trivia Q.S AL-LAHAB', description: 'Implementing navigation using React Router' }
   ];
 
   return (

@@ -1,21 +1,23 @@
-// components/Slider.js
 import React from 'react';
 
 const Slider = () => {
-  const slides = [
-    { id: 1, src: '/img/slide1.jpg', alt: 'Slide 1' },
-    { id: 2, src: '/img/slide2.jpg', alt: 'Slide 2' },
-    { id: 3, src: '/img/slide3.jpg', alt: 'Slide 3' }
-  ];
+  const handleGetStarted = () => {
+    // Scroll ke bagian 'explore' atau bagian tertentu di halaman
+    document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
-    <div className="slider">
-      {slides.map((slide) => (
-        <div className="slide" key={slide.id}>
-          <img src={slide.src} alt={slide.alt} className="slide-image" />
-        </div>
-      ))}
-    </div>
+    <section id="slider">
+      <div className="content">
+        <h1>Selamat datang di dunia seru kami! 🎉</h1>
+        <p>
+          Kami adalah Kelompok 1 dari mata kuliah TIK di Universitas PTIQ Jakarta, dan di sini kami ingin ngajak kamu untuk belajar sambil menikmati keseruan! Di website ini, kamu nggak cuma dapetin info penting, tapi juga cerita seru, game interaktif, dan kejutan lainnya yang bikin belajar terasa kayak main. 🚀 Penasaran? Yuk, jelajahi semua yang ada di sini dan rasakan gimana serunya belajar tanpa rasa bosan. Karena buat kami, belajar harus seru, asyik, dan bikin kamu ketagihan buat terus eksplor! 😎
+        </p>
+        <button className="get-started-btn" onClick={handleGetStarted}>
+          Let’s get started!
+        </button>
+      </div>
+    </section>
   );
 };
 
