@@ -130,75 +130,291 @@
 #about {
   padding: 2rem;
   text-align: center;
-  background-color: #F8EDED;
+  background-color: #f9f9f9;
 }
 
 /* Learning Materials CSS */
 #materials {
   text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
 }
 
 .card-container {
   display: flex;
-  gap: 10px; /* Ubah menjadi lebih kecil jika diperlukan */
-  padding: 2rem;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; /* Rata tengah untuk kartu */
+  margin: 20px auto; /* Jarak atas dan bawah */
+  max-width: 1200px; /* Maksimal lebar kontainer */
 }
 
 .card {
-  border-radius: 10px;
-  border: none;
-  padding: 1rem;
-  width: 200px;
-  text-align: center;
-  background-color: white;
+  background-color: #ffffff; /* Warna latar belakang kartu */
+  border-radius: 15px; /* Sudut membulat */
+  width: 300px; /* Lebar kartu */
+  margin: 15px; /* Jarak antar kartu */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan yang lebih halus */
+  overflow: hidden; /* Menghindari konten keluar dari kartu */
+  transition: transform 0.3s; /* Animasi saat hover */
+  position: relative; /* Untuk efek posisi gambar */
 }
 
-/* Team CSS - Card View */
-#team h2 {
+.card:hover {
+  transform: translateY(-5px); /* Mengangkat kartu saat hover */
+}
+
+.card-image {
+  width: 100%; /* Lebar gambar penuh kartu */
+  height: 180px; /* Tinggi tetap untuk gambar */
+  object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+}
+
+.card h3 {
+  margin: 15px; /* Jarak atas dan bawah judul */
+  font-size: 1.5em; /* Ukuran font judul */
+  font-weight: bold; /* Tebal untuk judul */
+  color: #333; /* Warna judul */
+}
+
+.card p {
+  margin: 0 15px 15px; /* Jarak untuk deskripsi */
+  font-size: 1em; /* Ukuran font deskripsi */
+  color: #555; /* Warna deskripsi */
+  line-height: 1.5; /* Jarak antar baris untuk deskripsi */
+}
+
+.card::after {
+  content: ''; /* Pseudo-element untuk efek overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1); /* Efek overlay transparan */
+  opacity: 0; /* Mulai dengan transparan */
+  transition: opacity 0.3s; /* Transisi efek overlay */
+}
+
+.card:hover::after {
+  opacity: 1; /* Menampilkan overlay saat hover */
+}
+
+/* Team section */
+.team-section {
+  padding: 50px;
   text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+/* Slider adjustments */
+.team-slider {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .team-card {
+  background-color: #fff;
   border-radius: 10px;
-  background-color: white;
-  padding: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  position: relative;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-width: 200px;
-  margin: 0; /* Pastikan tidak ada margin untuk kartu */
-  display: inline-block; /* Pastikan kartu diperlakukan sebagai elemen block */
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  margin: 0 15px; /* Menambah margin horizontal antar card */
 }
 
-/* Mengatur jarak antara kartu */
-.slick-slide {
-  margin: 0; /* Menghilangkan jarak horizontal */
+.team-card:hover {
+  transform: scale(1.05);
 }
 
-/* Jika ingin menambahkan jarak vertikal */
-.team-card {
-  margin-bottom: 0; /* Menghilangkan jarak bawah kartu */
-}
-
+/* Image styling: Full width and 3/4 of the card height */
 .team-photo {
   width: 100%;
-  height: 210px;
-  background-color: lightgray;
-  margin-bottom: 10px;
-  background-size: cover; /* Agar foto terpotong sesuai ukuran */
-  background-position: center; /* Menjaga fokus foto di tengah */
+  height: 75%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
 }
 
-/* Responsive Team Section */
+/* Text section: Takes 1/4 of the card height */
+.team-info {
+  height: 25%;
+  padding: 10px;
+  background-color: #f5f5f5;
+}
+
+.team-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.team-role {
+  font-size: 1rem;
+  color: #666;
+}
+
 @media (max-width: 768px) {
   .team-card {
-    max-width: 150px;
+    height: 300px;
   }
 
-  .team-photo {
-    height: 160px;
+  .team-name {
+    font-size: 1.1rem;
+  }
+
+  .team-role {
+    font-size: 0.9rem;
+  }
+}
+
+/* Contact Us Section */
+#contact {
+  padding: 3rem 1.5rem;
+  background-color: #f9f9f9;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-left {
+  flex: 1;
+}
+
+.contact-right {
+  flex: 1;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-right h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.contact-submit-btn {
+  background-color: #173B45;
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-submit-btn:hover {
+  background-color: #136232; /* Warna saat hover */
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 4rem 2rem;
+  background-color: #f4f4f9;
+}
+
+.contact-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.map-container {
+  flex: 1;
+  min-width: 350px;
+}
+
+.form-container {
+  flex: 1;
+  min-width: 350px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #0077b6;
+  box-shadow: 0px 4px 10px rgba(0, 119, 182, 0.1);
+}
+
+.submit-btn {
+  padding: 0.75rem;
+  border: none;
+  background-color: #0077b6;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.submit-btn:hover {
+  background-color: #005f8a;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
   }
 }
 

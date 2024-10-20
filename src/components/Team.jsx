@@ -8,11 +8,11 @@ import '../images/anggota/andini.gif';
 import '../images/anggota/firah.gif';
 import '../images/anggota/kintan.gif';
 import '../images/anggota/fina.gif';
-//import '../images/anggota/aghniya.gif';
+import '../images/anggota/aghniya.gif';
 import '../images/anggota/zullfahmi.gif';
 import '../images/anggota/eka.gif';
 import '../images/anggota/wildan.gif';
-//import '../images/anggota/fatha.gif';
+import '../images/anggota/fatha.gif';
 import '../style/styles.css';
 
 const fauzi = require('../images/anggota/fauzi.gif');
@@ -22,11 +22,11 @@ const andini = require('../images/anggota/andini.gif');
 const firah = require('../images/anggota/firah.gif');
 const kintan = require('../images/anggota/kintan.gif');
 const fina = require('../images/anggota/fina.gif');
-//const aghniya = require('../images/anggota/aghniya.gif');
+const aghniya = require('../images/anggota/aghniya.gif');
 const zullfahmi = require('../images/anggota/zullfahmi.gif');
 const eka = require('../images/anggota/eka.gif');
 const wildan = require('../images/anggota/wildan.gif');
-//const fatha = require('../images/anggota/fatha.gif');
+const fatha = require('../images/anggota/fatha.gif');
 
 const teamMembers = [
   { name: 'Fauzi Ramdani', role: 'Project Leader(PL)', photo: fauzi },
@@ -36,14 +36,14 @@ const teamMembers = [
   { name: 'Firah Khansa Nuraini', role: 'Anggota', photo: firah },
   { name: 'Kintan Dwi Banowati', role: 'Anggota', photo: kintan },
   { name: 'Fina Rahmania', role: 'Anggota', photo: fina },
-  //{ name: 'Aghniya Siti Fatimah', role: 'Anggota', photo: aghniya },
+  { name: 'Aghniya Siti Fatimah', role: 'Anggota', photo: aghniya },
   { name: 'Mhd zullfahmi', role: 'Anggota', photo: zullfahmi },
   { name: 'Eka Hardiansyah', role: 'Anggota', photo: eka },
   { name: 'Ahmad Wildan', role: 'Anggota', photo: wildan },
-  //{ name: 'Fatha Meiva Sheptian', role: 'Anggota', photo: fatha },
+  { name: 'Fatha Meiva Sheptian', role: 'Anggota', photo: fatha },
 ];
 
-// Pengaturan untuk slider
+// Pengaturan slider
 const settings = {
   dots: true,
   infinite: true,
@@ -61,10 +61,10 @@ const settings = {
       },
     },
     {
-      breakpoint: 600,
+      breakpoint: 768,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1, // Pastikan pengguliran satu kartu
+        slidesToScroll: 1,
       },
     },
   ],
@@ -72,19 +72,22 @@ const settings = {
 
 const Team = () => {
   return (
-    <section id="team">
-      <h2>Anggota Tim</h2>
-      <Slider {...settings}>
+    <section id="team" className="team-section">
+      <h2 className="section-title">Anggota Tim</h2>
+      <Slider {...settings} className="team-slider">
         {teamMembers.map((member, index) => (
           <div className="team-card" key={index}>
-            <div className="team-photo" style={{ backgroundImage: `url(${member.photo})` }}></div>
-            <h3 className="team-name">{member.name}</h3>
-            <p className="team-role">{member.role}</p>
+            <img src={member.photo} alt={member.name} className="team-photo" />
+            <div className="team-info">
+              <h3 className="team-name">{member.name}</h3>
+              <p className="team-role">{member.role}</p>
+            </div>
           </div>
         ))}
       </Slider>
     </section>
   );
 };
+
 
 export default Team;
